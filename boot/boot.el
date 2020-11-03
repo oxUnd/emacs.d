@@ -2,3 +2,4 @@
 (load "~/.emacs.d/boot/load")
 
 (require 'load)
+(require 'basic)
