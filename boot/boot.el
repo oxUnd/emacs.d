@@ -3,3 +3,4 @@
 
 (require 'load)
 (require 'basic)
+(require 'init-org)
