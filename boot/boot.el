@@ -4,3 +4,4 @@
 (require 'load)
 (require 'basic)
 (require 'init-org)
+(require 'init-go)
