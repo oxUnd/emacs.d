@@ -5,7 +5,7 @@
 (package-initialize)
 ;; below code is very important!
 (unless package-archive-contents
-	(package-refresh-contents))
+  (package-refresh-contents))
 
 ;; global settings
 (setq inhibit-splash-screen t)
@@ -22,8 +22,8 @@
 
 ;; settings load
 (load
-	(concat
-		(getenv "HOME") "/.emacs.d/boot/boot"))
+ (concat
+  (getenv "HOME") "/.emacs.d/boot/boot"))
 
 (require 'boot)
 
