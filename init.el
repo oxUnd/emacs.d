@@ -18,7 +18,10 @@
 (tool-bar-mode -1)
 
 ;; settings load
-(load "~/.emacs.d/boot/boot")
+(load
+	(concat
+		(getenv "HOME") "/.emacs.d/boot/boot"))
+
 (require 'boot)
 
 (custom-set-faces

@@ -4,6 +4,6 @@
 
 ; backup settings
 (add-to-list 'backup-directory-alist
-             (cons "." "~/.emacs.d/backups/"))
+             (cons "." "${HOME}/.emacs.d/backups/"))
 (customize-set-variable
     'tramp-backup-directory-alist backup-directory-alist)
