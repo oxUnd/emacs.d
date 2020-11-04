@@ -5,5 +5,6 @@
 
 (require 'load)
 (require 'basic)
+(require 'init-themes)
 (require 'init-org)
 (require 'init-go)
