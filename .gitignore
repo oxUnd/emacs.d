@@ -9,3 +9,10 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# MacOS
+.DS_Store
+
+/backups
+/elpa
+.cache
