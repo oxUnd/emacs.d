@@ -18,7 +18,10 @@
 (setq indent-tabs-mode nil)
 
 ;; hidden toolbar
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)))
+(menu-bar-mode -1)
 
 ;; settings load
 (load
