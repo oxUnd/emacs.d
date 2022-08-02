@@ -11,7 +11,7 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
-
+(setq-default truncate-lines nil)
 ; (setq tab-width 4)
 
 ;; disable tabs-mode
