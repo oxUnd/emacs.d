@@ -11,7 +11,7 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
-
+(setq-default truncate-lines nil)
 ; (setq tab-width 4)
 
 ;; disable tabs-mode
@@ -41,4 +41,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(sanityinc-tomorrow-blue))
  '(package-selected-packages '(go-mode)))
