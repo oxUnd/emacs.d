@@ -7,14 +7,14 @@
 
 (require 'use-package)
 
-(setq org-roam-directory (file-truename "~/Documents/org"))
+(setq org-roam-directory (file-truename "~/Documents/org/roam"))
 
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory (file-truename "~/Documents/org"))
-  (org-roam-db-location (file-truename "~/Documents/org/org-roam.db"))
-  (org-roam-dailies-directory (file-truename "~/Documents/org/daily"))
+  (org-roam-directory (file-truename "~/Documents/org/roam"))
+  (org-roam-db-location (file-truename "~/Documents/org/roam/org-roam.db"))
+  (org-roam-dailies-directory (file-truename "~/Documents/org/roam/daily"))
   (org-roam-graph-executable (file-truename "/opt/homebrew/bin/dot"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ("C-c n f" . org-roam-node-find)
@@ -28,6 +28,7 @@
 
 (use-package org-roam-ui
   :after org-roam
+  :bind (("C-c n u" . org-roam-ui-mode))
   :config
   (setq org-roam-ui-sync-theme t
 	org-roam-ui-follow t
