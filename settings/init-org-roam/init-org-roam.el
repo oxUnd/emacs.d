@@ -21,7 +21,8 @@
 	 ("C-c n g" . org-roam-graph)
 	 ("C-c n i" . org-roam-node-insert)
 	 ("C-c n c" . org-roam-capture)
-	 ("C-c n j" . org-roam-dailies-capture-today))
+	 ("C-c n j" . org-roam-dailies-capture-today)
+	 ("C-c n s" . org-roam-db-sync))
   :config
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (require 'org-roam-protocol))
@@ -31,7 +32,7 @@
   :bind (("C-c n u" . org-roam-ui-mode))
   :config
   (setq org-roam-ui-sync-theme t
-	org-roam-ui-follow t
+	org-roam-ui-follow nil
 	org-roam-ui-update-on-save t
 	org-roam-ui-open-on-start t))
 

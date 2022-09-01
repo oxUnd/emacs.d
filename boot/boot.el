@@ -10,3 +10,4 @@
 (require 'init-org-mobile)
 (require 'init-org-roam)
 (require 'init-go)
+(require 'init-smex)
