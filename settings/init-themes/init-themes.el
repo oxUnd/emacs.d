@@ -4,10 +4,11 @@
 
 (provide 'init-themes)
 
-(get-package 'color-theme-sanityinc-solarized)
-(get-package 'color-theme-sanityinc-tomorrow)
+(get-package 'monokai-theme)
+(get-package 'use-package)
 
-(setq custom-safe-themes t)
-
-(require 'color-theme-sanityinc-tomorrow)
-(color-theme-sanityinc-tomorrow-blue)
+(use-package monokai-theme
+  :init
+  (setq custom-safe-themes t)
+  :config
+  (load-theme 'monokai t))
