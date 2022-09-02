@@ -12,7 +12,8 @@
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
 (setq-default truncate-lines nil)
-; (setq tab-width 4)
+;; (setq fill-column 80)
+;; (setq tab-width 4)
 
 ;; disable tabs-mode
 (setq indent-tabs-mode nil)
@@ -20,7 +21,8 @@
 ;; hidden toolbar
 (if (display-graphic-p)
     (progn
-      (tool-bar-mode -1)))
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
 (menu-bar-mode -1)
 
 ;; settings load
