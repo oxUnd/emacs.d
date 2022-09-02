@@ -6,10 +6,10 @@
 
 (use-package lsp-mode
   :init
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "C-c o")
   :hook
-  ((go-mode . lsp)
-   (c-mdoe . lsp)
+  ((go-mode . lsp-deferred)
+   (c-mdoe . lsp-deferred)
    (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
