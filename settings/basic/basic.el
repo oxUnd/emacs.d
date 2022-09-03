@@ -1,4 +1,4 @@
-; basic settings
+;; basic settings
 
 (provide 'basic)
 
@@ -7,13 +7,16 @@
 (get-package 'no-littering)
 (get-package 'use-package)
 
-; backup settings
+;; backup settings
 (setq backup-directory-alist
              (list (cons "." (concat (getenv "HOME") "/.emacs.d/backups/"))))
 
 ;; frame style settings
 (add-to-list 'default-frame-alist '(width . 90))
 (add-to-list 'default-frame-alist '(height . 40))
+
+;; 全局快捷健
+(global-set-key (kbd "M-SPC") 'set-mark-command)
 
 ;; fix fonts
 (defun fix-fonts()
