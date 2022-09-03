@@ -15,4 +15,6 @@
 
 /backups
 /elpa
+/var
+/etc
 .cache

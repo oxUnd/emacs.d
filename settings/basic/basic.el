@@ -21,7 +21,7 @@
 ;; fix fonts
 (defun fix-fonts()
   (interactive)
-  (set-face-attribute 'default nil :font (font-spec :family "Cascadia Code PL" :size 13))
+;;  (set-face-attribute 'default nil :font (font-spec :family "Cascadia Mono PL Light" :size 13))
 
   (set-fontset-font t '(#x4e00 . #x9fff) (font-spec :family "方正宋刻本秀楷简体" :size 16) nil 'prepend))
 
