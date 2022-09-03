@@ -19,6 +19,13 @@
     ;; start buffer
     (setq inhibit-splash-screen t)
     (setq inhibit-startup-message t)
+    (setq inhibit-startup-screen t)
+    (setq inhibit-startup-echo-area-message t)
+    (setq initial-scratch-message nil)
+    (setq initial-major-mode 'org-mode)
+    (setq-default indent-tabs-mode nil)
+    (setq pop-up-windows nil)
+    
     
     ;; No sound
     (setq ring-bell-function 'ignore)
@@ -33,6 +40,16 @@
     (setq indent-tabs-mode nil)
     (if (display-graphic-p)
 	(progn
-	  (tool-bar-mode -1)
-	  (scroll-bar-mode -1)))
-    (menu-bar-mode -1)))
+	  (tool-bar-mode 0)
+	  (scroll-bar-mode 0)))
+    (menu-bar-mode 0)
+
+    ;; buffer
+    (defun my/kill-this-buffer()
+      (interactive)
+      (kill-buffer (current-buffer)))
+    (global-set-key (kbd "C-x k") 'my/kill-this-buffer)))
+
+    ;;uniquify
+    ;; (require 'uniquify)
+    
