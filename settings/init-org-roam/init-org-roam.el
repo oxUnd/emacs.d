@@ -42,6 +42,21 @@
   ("C-c n d" . deft)
   :custom
   (deft-recursive t)
+;;  (deft-use-filename-as-title nil)
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
-  (deft-directory org-roam-directory))
+  (deft-directory org-roam-directory)
+  (deft-strip-summary-regexp
+    (concat "\\("
+	    "[\n\t]"
+	    "\\|^#\\+[[:alpha:]_]+:.*$"
+	    "\\|^:PROPERTIES:\n\\(.+\n\\)+:END:\n"
+	    "\\|\\[\\[\\(.*\\]\\)"
+	    "\\)")))
+  :config
+  (defun my/deft-parse-title(file contents)
+    (let ((begin (string-match "^#\\+[tT][iI][tT][lL][eE]: .*$" contents)))
+      (if begin
+	  (string-trim (substring contents begin (match-end 0)) "#\\+[tT][iI][tT][lL][eE]: *" "[\n\t ]+")
+	(deft-base-filename file))))
+  (advice-add 'deft-parse-title :override #'my/deft-parse-title)

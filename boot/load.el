@@ -12,6 +12,11 @@
 
 ;; load all settings file to runtime
 (require 'load-directory)
+
+;; my extension in here.
 (load-directory
- (concat
-  (getenv "HOME") "/.emacs.d/settings"))
+ (concat (getenv "HOME") "/.emacs.d/plug"))
+
+;; all extension config
+(load-directory
+ (concat (getenv "HOME") "/.emacs.d/settings"))
