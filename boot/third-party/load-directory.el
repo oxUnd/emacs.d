@@ -12,6 +12,12 @@
   :safe 'stringp
   :group 'my)
 
+(defcustom my-setting-directory (expand-file-name "~/.emacs.d/settings")
+  "My Setting's Directory of Extension."
+  :type 'directory
+  :safe 'stringp
+  :group 'my)
+
 (defun my/load-directory (dir)
   (let ((load-it (lambda (f)
 		   (load-file f))))
@@ -26,3 +32,9 @@
 (defun my/load-plug(plug-name)
   (let ((plug-file-name plug-name))
     (my/load-file-under-directory plug-file-name my-plug-directory)))
+
+(defun my/register(e)
+  (let ((f (file-name-concat
+            e           
+            (file-name-with-extension e "el"))))
+    (my/load-file-under-directory f my-setting-directory)))

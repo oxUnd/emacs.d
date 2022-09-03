@@ -1,12 +1,19 @@
 (provide 'boot)
 (load
   (concat
-  	(getenv "HOME") "/.emacs.d/boot/load"))
-(require 'load)
-(require 'basic)
-(require 'init-themes)
-(require 'init-org)
-(require 'init-org-mobile)
-(require 'init-org-roam)
-(require 'init-go)
-(require 'init-smex)
+   (getenv "HOME") "/.emacs.d/boot/load"))
+
+(my/load-plug "my-global/my-global")
+(my/global-settings-basic)
+
+(my/register "basic")
+(my/register "init-themes")
+(my/register "init-org")
+(my/register "init-org-mobile")
+(my/register "init-org-roam")
+(my/register "init-go")
+(my/register "init-smex")
+(my/register "init-company")
+(my/register "init-yasnippet")
+(my/register "init-elfeed")
+(my/register "init-lsp")

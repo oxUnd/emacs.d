@@ -3,12 +3,15 @@
 (defun my/global-settings-basic()
   (interactive)
   (progn
+    ;; gc
+    (setq gc-cons-threshold (* 100 1024 1024))
+    
     ;; Font and frame size
     (setq default-frame-alist
 	  (append (list '(width . 72) '(height . 40)
 			'(vertical-scroll-bar . nil)
 			'(internal-border-width . 24)
-			'(font . "Roboto Mono Light 14"))))
+			'(font . "Cascadia Code PL Light 15"))))
     (set-frame-parameter (selected-frame)
 			 'internal-border-width 24)
     ;; Line spacing
