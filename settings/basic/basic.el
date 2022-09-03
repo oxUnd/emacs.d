@@ -12,8 +12,8 @@
              (list (cons "." (concat (getenv "HOME") "/.emacs.d/backups/"))))
 
 ;; frame style settings
-(add-to-list 'default-frame-alist '(width . 90))
-(add-to-list 'default-frame-alist '(height . 40))
+;; (add-to-list 'default-frame-alist '(width . 90))
+;; (add-to-list 'default-frame-alist '(height . 40))
 
 ;; 全局快捷健
 (global-set-key (kbd "M-SPC") 'set-mark-command)
