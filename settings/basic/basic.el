@@ -3,7 +3,6 @@
 (provide 'basic)
 
 (get-package 'which-key)
-(get-package 'airline-themes)
 (get-package 'no-littering)
 (get-package 'use-package)
 
@@ -28,12 +27,6 @@
 (if (display-graphic-p)
     (fix-fonts))
 
-;; buffer style settings
-
-;; Powerline settings
-(use-package airline-themes
-  :config
-  (load-theme 'airline-dark t))
 
 ;; 保持 .emacs.d 干净
 (use-package no-littering
