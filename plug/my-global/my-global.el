@@ -38,9 +38,12 @@
     (set-default 'cursor-type '(bar . 1))
     (blink-cursor-mode 0)
     
-    ;;
+
     (setq-default truncate-lines nil)
+
+    
     (setq indent-tabs-mode nil)
+
     (if (display-graphic-p)
 	(progn
 	  (tool-bar-mode 0)
