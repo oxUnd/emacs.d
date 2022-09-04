@@ -50,6 +50,8 @@
 	  (scroll-bar-mode 0)))
     (menu-bar-mode 0)
 
+    (save-place-mode 1)
+    
     ;; buffer
     (defun my/kill-this-buffer()
       (interactive)
@@ -86,10 +88,10 @@
                       :foreground (face-background 'default))
   (set-face-attribute 'window-divider-last-pixel nil
                       :foreground (face-background 'default)))
-  
+
 ;; from https://github.com/rougier/elegant-emacs
 (defun my/global-mode-line-render(left right)
-  (let* ((available-width (- (window-width) (length left))))
+  (let* ((available-width (- (window-total-width) (string-width left))))
     (format (format "%%s %%%ds" available-width) left right)))
 
 ;; from https://github.com/rougier/elegant-emacs
