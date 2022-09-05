@@ -23,3 +23,12 @@
 (my/register "init-yasnippet")
 (my/register "init-elfeed")
 (my/register "init-lsp")
+
+;; bugfix, keep when new frame scrol-bar hidden.
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (select-frame frame)
+            (when (display-graphic-p frame)
+              (progn
+                (scroll-bar-mode 0)
+                (tool-bar-mode 0)))))
