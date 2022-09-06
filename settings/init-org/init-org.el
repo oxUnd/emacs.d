@@ -4,8 +4,6 @@
 (get-package 'org-modern)
 (get-package 'use-package)
 
-(require 'org)
-
 (my/load-plug "my-org-mode/my-org-mode")
 
 
@@ -14,11 +12,18 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c x") 'my/org-screenshot)
 
-(add-hook 'org-mode-hook (lambda() (setq truncate-lines nil)))
+(use-package org
+  :ensure t
+  :hook
+  (org-mode . (lambda() (setq truncate-lines nil))))
 
 (use-package org-modern
-  :config
-  (global-org-modern-mode))
+  :ensure t
+  :custom
+  (org-modern-hide-stars nil)
+  :hook
+  (org-mode . org-modern-mode)
+  (org-agenda-finalize . org-modern-agenda))
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline "~/Documents/org/gtd.org" "Tasks")
