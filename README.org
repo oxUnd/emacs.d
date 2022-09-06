@@ -5,6 +5,6 @@
 
 ** Before
 
-*** 情提前装字体
+*** 请提前装字体
 - 英文字体 [[https://github.com/microsoft/cascadia-code][Cascadia Code PL Light]]
 - 简体中文字体 [[https://www.foundertype.com/index.php/FontInfo/index/id/198][方正宋刻本秀楷简体]]
