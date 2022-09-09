@@ -1,9 +1,19 @@
 ;; My Global Settings
 
+
+;; fix fonts
+(defun my/fix-fonts()
+  (interactive)
+;;  (set-face-attribute 'default nil :font (font-spec :family "Cascadia Mono PL Light" :size 13))
+
+  (set-fontset-font t '(#x4e00 . #x9fff) (font-spec :family "方正宋刻本秀楷简体" :size 17) nil 'prepend))
+
+
 (defun my/global-settings-frame-style()
   ;; Font and frame size
   (if (display-graphic-p)
       (progn
+        (my/fix-fonts)
 	(tool-bar-mode 0)
 	(scroll-bar-mode 0)))
   (menu-bar-mode 0)
@@ -12,7 +22,7 @@
 	(append (list '(width . 72) '(height . 40)
 		      '(vertical-scroll-bar . nil)
 		      '(internal-border-width . 24)
-		      '(font . "Cascadia Code PL Light 15"))))
+		      '(font . "Cascadia Code 16"))))
   (set-frame-parameter (selected-frame)
 		       'internal-border-width 24))
 
