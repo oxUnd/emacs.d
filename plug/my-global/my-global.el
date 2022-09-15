@@ -63,6 +63,9 @@
   (setq indent-tabs-mode nil)
 
   (save-place-mode 1)
+
+  ;; speedbar
+  (setq speedbar-use-images nil)
   
   ;; buffer
   (defun my/kill-this-buffer()
