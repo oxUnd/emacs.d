@@ -33,3 +33,9 @@
   :diminish which-key-mode
   :config
   (which-key-mode))
+
+;;sr-speedbar
+(my/load-plug "sr-speedbar/sr-speedbar")
+(use-package sr-speedbar
+  :bind
+  ("C-.". sr-speedbar-toggle))
