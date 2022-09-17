@@ -15,13 +15,10 @@
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
 
 (defun load-with-byte-compile (file)
-  (let ((f (file-name-with-extension file ".elc")))
-    (if (file-exists-p f)
-        (load file)
-      (progn
-	(byte-compile-file (file-name-with-extension file ".el"))
-	(load file)))))
-    
+  (unless (file-exists-p (file-name-with-extension file ".elc"))
+    (byte-compile-file (file-name-with-extension file ".el")))
+  (load file))
+
 ;; settings load
 (load-with-byte-compile
  (concat
