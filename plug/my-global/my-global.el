@@ -21,7 +21,7 @@
   (menu-bar-mode 0)
 
   (setq default-frame-alist
-	(append (list '(width . 72) '(height . 40)
+	(append (list ;;'(width . 72) '(height . 40)
 		      '(vertical-scroll-bar . nil)
 		      '(internal-border-width . 24))))
   (set-frame-parameter (selected-frame)
