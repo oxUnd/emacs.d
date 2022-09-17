@@ -2,6 +2,8 @@
 
 ;;; auto install package.
 (defun get-package (package)
+  (unless package-archive-contents
+    (package-refresh-contents))
   (unless (package-installed-p package)
     (package-install package)))
 

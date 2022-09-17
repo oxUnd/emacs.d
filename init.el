@@ -1,7 +1,7 @@
 (require 'package)
-(setq package-archives '(("gnu" . "http://mirrors.163.com/elpa/gnu/")
-			 ("org" . "http://mirrors.163.com/elpa/org/")
-			 ("melpa" . "http://mirrors.163.com/elpa/melpa/")))
+(setq package-archives '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 
 ;; http://ergoemacs.org/emacs/emacs_byte_compile.html

@@ -34,3 +34,13 @@
 (require 'sr-speedbar)
 (setq sr-speedbar-auto-refresh t)
 (global-set-key (kbd "C-.") 'sr-speedbar-toggle)
+
+
+;;*Completions"
+(use-package fussy
+  :ensure t
+  :config
+  (push 'fussy completion-styles)
+  (setq
+   completion-category-defaults nil
+   completion-category-overrides nil))
