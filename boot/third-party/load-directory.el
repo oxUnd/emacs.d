@@ -18,6 +18,9 @@
   :safe 'stringp
   :group 'my)
 
+(defun my/load-file (file)
+  (load-with-byte-compile file))
+
 (defun my/load-directory (dir)
   (let ((load-it (lambda (f)
 		   (load-file f))))
@@ -26,15 +29,13 @@
 (defun my/load-file-under-directory(filename directory)
   (let ((f (file-name-concat
 	    (expand-file-name directory)
-	    (file-name-with-extension filename ".el"))))
-    (load-file f)))
+	    filename)))
+    (my/load-file f)))
 
 (defun my/load-plug(plug-name)
   (let ((plug-file-name plug-name))
     (my/load-file-under-directory plug-file-name my-plug-directory)))
 
-(defun my/register(e)
-  (let ((f (file-name-concat
-            e           
-            (file-name-with-extension e "el"))))
+(defun my/register(module)
+  (let ((f (file-name-concat module module)))
     (my/load-file-under-directory f my-setting-directory)))

@@ -6,27 +6,11 @@
 (get-package 'no-littering)
 (get-package 'use-package)
 
-;; backup settings
-(setq backup-directory-alist
-             (list (cons "." (concat (getenv "HOME") "/.emacs.d/backups/"))))
-
-;; frame style settings
-;; (add-to-list 'default-frame-alist '(width . 90))
-;; (add-to-list 'default-frame-alist '(height . 40))
+;; env
+(add-to-list 'exec-path (concat (getenv "HOME") "/go/bin"))
 
 ;; 全局快捷健
 (global-set-key (kbd "M-SPC") 'set-mark-command)
-
-;; fix fonts
-(defun fix-fonts()
-  (interactive)
-;;  (set-face-attribute 'default nil :font (font-spec :family "Cascadia Mono PL Light" :size 13))
-
-  (set-fontset-font t '(#x4e00 . #x9fff) (font-spec :family "方正宋刻本秀楷简体" :size 16) nil 'prepend))
-
-(if (display-graphic-p)
-    (fix-fonts))
-
 
 ;; 保持 .emacs.d 干净
 (use-package no-littering
@@ -44,3 +28,19 @@
   :diminish which-key-mode
   :config
   (which-key-mode))
+
+;;sr-speedbar
+(my/load-plug "sr-speedbar/sr-speedbar")
+(setq sr-speedbar-auto-refresh t)
+(global-set-key (kbd "C-.") 'sr-speedbar-toggle)
+(speedbar-add-supported-extension ".go")
+
+
+;;*Completions"
+(use-package fussy
+  :ensure t
+  :config
+  (push 'fussy completion-styles)
+  (setq
+   completion-category-defaults nil
+   completion-category-overrides nil))

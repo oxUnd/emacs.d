@@ -1,4 +1,5 @@
 ;; improvements org-mode
+(provide 'my-org-mode)
 
 (defun my/org-screenshot()
   (interactive)

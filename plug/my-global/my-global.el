@@ -1,18 +1,29 @@
 ;; My Global Settings
 
+(provide 'my-global)
+
+;; fix fonts
+(defun my/fix-fonts()
+  (interactive)
+  (set-face-attribute 'default nil :font (font-spec :family "Cascadia Mono" :size 16))
+  (set-fontset-font t 'han (font-spec :family "方正宋刻本秀楷简体" :size 17) nil 'prepend)
+;;  (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji" :size 20))
+  (set-fontset-font t 'symbol (font-spec :family "Symbola" :size 17)))
+
+
 (defun my/global-settings-frame-style()
-  ;; Font and frame size
   (if (display-graphic-p)
       (progn
+	(my/fix-fonts)
 	(tool-bar-mode 0)
 	(scroll-bar-mode 0)))
+  
   (menu-bar-mode 0)
 
   (setq default-frame-alist
 	(append (list '(width . 72) '(height . 40)
 		      '(vertical-scroll-bar . nil)
-		      '(internal-border-width . 24)
-		      '(font . "Cascadia Code PL Light 15"))))
+		      '(internal-border-width . 24))))
   (set-frame-parameter (selected-frame)
 		       'internal-border-width 24))
 
@@ -53,6 +64,9 @@
   (setq indent-tabs-mode nil)
 
   (save-place-mode 1)
+
+  ;; speedbar
+  (setq speedbar-use-images nil)
   
   ;; buffer
   (defun my/kill-this-buffer()

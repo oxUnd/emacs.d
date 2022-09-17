@@ -1,5 +1,5 @@
 (provide 'boot)
-(load
+(load-with-byte-compile
   (concat
    (getenv "HOME") "/.emacs.d/boot/load"))
 

@@ -7,6 +7,7 @@
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c o")
+  (setq lsp-headerline-breadcrumb-enable nil) ;; fix
   :hook
   ((go-mode . lsp-deferred)
    (c-mdoe . lsp-deferred)
