@@ -8,9 +8,6 @@
     (package-install package)))
 
 ;; custom settings file load
-(load
+(load-with-byte-compile
  (concat
   (getenv "HOME") "/.emacs.d/boot/third-party/load-directory"))
-
-;; load all settings file to runtime
-(require 'load-directory)

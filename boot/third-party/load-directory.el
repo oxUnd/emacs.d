@@ -19,7 +19,7 @@
   :group 'my)
 
 (defun my/load-file (file)
-  (load file))
+  (load-with-byte-compile file))
 
 (defun my/load-directory (dir)
   (let ((load-it (lambda (f)

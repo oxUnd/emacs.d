@@ -14,8 +14,18 @@
 
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
 
+(defun load-with-byte-compile (file)
+  (let ((f (file-name-with-extension file ".elc")))
+    (message "%s" f)
+    (if (file-exists-p f)
+        (load f)
+      (progn
+	(message "xxx %s" (file-name-with-extension file ".el"))
+	(byte-compile-file (file-name-with-extension file ".el"))
+	(load file)))))
+    
 ;; settings load
-(load
+(load-with-byte-compile
  (concat
   (getenv "HOME") "/.emacs.d/boot/boot"))
 
