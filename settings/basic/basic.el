@@ -32,4 +32,5 @@
 ;;sr-speedbar
 (my/load-plug "sr-speedbar/sr-speedbar")
 (require 'sr-speedbar)
+(setq sr-speedbar-auto-refresh t)
 (global-set-key (kbd "C-.") 'sr-speedbar-toggle)
