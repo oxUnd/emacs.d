@@ -37,9 +37,14 @@
 
 
 ;;*Completions"
+(my/load-plug "fussy/fussy")
 (use-package fussy
   :ensure t
   :config
+  (setq fussy-filter-fn 'fussy-filter-default)
+  (setq fussy-use-cache t)
+  (setq fussy-compare-same-score-fn 'fussy-histlen->strlen<)
+  
   (push 'fussy completion-styles)
   (setq
    completion-category-defaults nil
