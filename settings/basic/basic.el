@@ -6,13 +6,8 @@
 (get-package 'no-littering)
 (get-package 'use-package)
 
-;; backup settings
-(setq backup-directory-alist
-             (list (cons "." (concat (getenv "HOME") "/.emacs.d/backups/"))))
-
-;; frame style settings
-;; (add-to-list 'default-frame-alist '(width . 90))
-;; (add-to-list 'default-frame-alist '(height . 40))
+;; env
+(add-to-list 'exec-path (concat (getenv "HOME") "/go/bin"))
 
 ;; 全局快捷健
 (global-set-key (kbd "M-SPC") 'set-mark-command)
@@ -36,6 +31,5 @@
 
 ;;sr-speedbar
 (my/load-plug "sr-speedbar/sr-speedbar")
-(use-package sr-speedbar
-  :bind
-  ("C-.". sr-speedbar-toggle))
+(require 'sr-speedbar)
+(global-set-key (kbd "C-.") 'sr-speedbar-toggle)

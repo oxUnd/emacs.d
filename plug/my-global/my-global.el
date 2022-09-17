@@ -1,5 +1,6 @@
 ;; My Global Settings
 
+(provide 'my-global)
 
 ;; fix fonts
 (defun my/fix-fonts()
