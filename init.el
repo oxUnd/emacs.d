@@ -16,11 +16,9 @@
 
 (defun load-with-byte-compile (file)
   (let ((f (file-name-with-extension file ".elc")))
-    (message "%s" f)
     (if (file-exists-p f)
-        (load f)
+        (load file)
       (progn
-	(message "xxx %s" (file-name-with-extension file ".el"))
 	(byte-compile-file (file-name-with-extension file ".el"))
 	(load file)))))
     
