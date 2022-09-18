@@ -14,6 +14,7 @@
 
 
 (my/register "basic")
+(my/register "init-startup")
 (my/register "init-org")
 (my/register "init-org-mobile")
 (my/register "init-org-roam")
