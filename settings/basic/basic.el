@@ -4,6 +4,7 @@
 
 (get-package 'which-key)
 (get-package 'no-littering)
+(get-package 'vertico)
 (get-package 'use-package)
 
 ;; env
@@ -35,12 +36,7 @@
 (global-set-key (kbd "C-.") 'sr-speedbar-toggle)
 (speedbar-add-supported-extension ".go")
 
-
-;;*Completions"
-(use-package fussy
-  :ensure t
-  :config
-  (push 'fussy completion-styles)
-  (setq
-   completion-category-defaults nil
-   completion-category-overrides nil))
+;; Enable vertico
+(use-package vertico
+  :init
+  (vertico-mode))

@@ -14,6 +14,7 @@
 
 
 (my/register "basic")
+(my/register "init-startup")
 (my/register "init-org")
 (my/register "init-org-mobile")
 (my/register "init-org-roam")
@@ -23,6 +24,7 @@
 (my/register "init-yasnippet")
 (my/register "init-elfeed")
 (my/register "init-lsp")
+(my/register "init-projectile")
 
 ;; bugfix, keep when new frame scrol-bar hidden.
 (add-hook 'after-make-frame-functions
