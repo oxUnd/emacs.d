@@ -5,6 +5,7 @@
 (get-package 'which-key)
 (get-package 'no-littering)
 (get-package 'vertico)
+(get-package 'cnfonts)
 (get-package 'use-package)
 
 ;; env
@@ -40,3 +41,12 @@
 (use-package vertico
   :init
   (vertico-mode))
+
+;; cnfonts
+(use-package cn-fonts
+  :bind (
+         :cnfonts-mode-map
+         ("C--" . cnfonts-decrease-fontsize)
+         ("C-=" . cnfonts-increase-fontsize))
+  :config
+  (cnfonts-mode 1))
