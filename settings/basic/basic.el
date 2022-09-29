@@ -43,10 +43,10 @@
   (vertico-mode))
 
 ;; cnfonts
-(use-package cn-fonts
+(use-package cnfonts
   :bind (
-         :cnfonts-mode-map
-         ("C--" . cnfonts-decrease-fontsize)
-         ("C-=" . cnfonts-increase-fontsize))
+         :map cnfonts-mode-map
+         ("C--" . 'cnfonts-decrease-fontsize)
+         ("C-=" . 'cnfonts-increase-fontsize))
   :config
   (cnfonts-mode 1))
