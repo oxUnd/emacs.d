@@ -21,6 +21,7 @@
 (use-package org-modern
   :ensure t
   :custom
+  (org-modern-table nil)
   (org-modern-hide-stars nil)
   (org-modern-checkbox
    '((?X . "☑")

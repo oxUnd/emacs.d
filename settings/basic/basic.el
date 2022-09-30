@@ -44,9 +44,10 @@
 
 ;; cnfonts
 (use-package cnfonts
-  :bind (
-         :map cnfonts-mode-map
-         ("C--" . 'cnfonts-decrease-fontsize)
-         ("C-=" . 'cnfonts-increase-fontsize))
+  :custom
+  (cnfonts-personal-fontnames
+   '(("Cascadia Code" "CaskaydiaCove Nerd Font" "Caskaydiacove Nerd Font Mono")
+     ("方正宋刻本秀楷简体" "方正宋刻本秀楷繁体")
+     nil nil nil))
   :config
   (cnfonts-mode 1))
