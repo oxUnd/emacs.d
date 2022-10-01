@@ -14,23 +14,30 @@
 
 (use-package org
   :ensure t
-  :hook
-  (org-mode . (lambda() (setq truncate-lines nil))))
-
-;; ☃ ☄ ★ ☆ ☇ ☈ ☉ ☊ ☋ ☌ ☍ ☎ ☏ ☐ ☑ ☒ ☓ ☔ ☕ ☖ ☗ ☘ ☙ ☚ ☛ ☜ ☝ ☞ ☟ ☠ ☡ ☢ ☣ ☤ ☥ ☦ ☧ ☨ ☩ ☪ ☫ ☬ ☭ ☮ ☯
-(use-package org-modern
-  :ensure t
   :custom
-  (org-modern-table nil)
-  (org-modern-hide-stars nil)
-  (org-modern-checkbox
-   '((?X . "☑")
-     (?- . "☒")
-     (?\s . "☐")))
-  (org-modern-symbol "Symbola")
+  (org-ditaa-jar-path "~/.emacs.d/contrib/org/jditaa.jar")
   :hook
-  (org-mode . org-modern-mode)
-  (org-agenda-finalize . org-modern-agenda))
+  (org-mode . (lambda() (setq truncate-lines nil)))
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((ditaa . t)
+     (python . t))))
+
+;; ☃ ☄ ★ ☆ ☇ ☈ ☉ ☊ ☋ ☌ ☍ ☎ ☏ ☐ ☑ ☒ ☓ ☔ ☕ ☖ ☗ ☘☙ ☚ ☛ ☜ ☝ ☞ ☟ ☠ ☡ ☢ ☣ ☤ ☥ ☦ ☧ ☨ ☩ ☪ ☫ ☬ ☭ ☮ ☯
+;; (use-package org-modern
+;;  :ensure t
+;;  :custom
+;;  (org-modern-table nil)
+;;  (org-modern-hide-stars nil)
+;;  (org-modern-checkbox
+;;   '((?X . "☑")
+;;     (?- . "☒")
+;;     (?\s . "☐")))
+;;  (org-modern-symbol "Symbola")
+;;  :hook
+;;  (org-mode . org-modern-mode)
+;;  (org-agenda-finalize . org-modern-agenda))
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline "~/Documents/org/gtd.org" "Tasks")

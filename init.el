@@ -4,6 +4,16 @@
 			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 
+(defun setenv-from-zshrc ()
+  (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+    (setenv "PATH" path)
+    (setq exec-path
+          (append
+           (split-string-and-unquote path ":")
+           exec-path))))
+
+(setenv-from-zshrc)
+
 ;; http://ergoemacs.org/emacs/emacs_byte_compile.html
 (defun byte-compile-current-buffer ()
   "`byte-compile' current buffer if it's emacs-lisp-mode and compiled file exists."
