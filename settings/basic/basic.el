@@ -5,6 +5,7 @@
 (get-package 'which-key)
 (get-package 'no-littering)
 (get-package 'vertico)
+(get-package 'cnfonts)
 (get-package 'use-package)
 
 ;; env
@@ -40,3 +41,13 @@
 (use-package vertico
   :init
   (vertico-mode))
+
+;; cnfonts
+(use-package cnfonts
+  :custom
+  (cnfonts-personal-fontnames
+   '(("Cascadia Code" "CaskaydiaCove Nerd Font" "Caskaydiacove Nerd Font Mono")
+     ("方正宋刻本秀楷简体" "方正宋刻本秀楷繁体")
+     nil nil nil))
+  :config
+  (cnfonts-mode 1))
