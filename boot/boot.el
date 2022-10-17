@@ -25,6 +25,7 @@
 (my/register "init-elfeed")
 (my/register "init-lsp")
 (my/register "init-projectile")
+(my/register "init-copilot")
 (my/register "init-apps")
 ;; bugfix, keep when new frame scrol-bar hidden.
 (add-hook 'after-make-frame-functions
