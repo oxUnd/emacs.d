@@ -51,3 +51,8 @@
      nil nil nil))
   :config
   (cnfonts-mode 1))
+
+;; program language
+(setq c-default-style
+      '((c-mode . "k&r")
+        (other . "k&r")))
