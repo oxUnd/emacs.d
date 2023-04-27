@@ -25,19 +25,19 @@
      (python . t))))
 
 ;; ☃ ☄ ★ ☆ ☇ ☈ ☉ ☊ ☋ ☌ ☍ ☎ ☏ ☐ ☑ ☒ ☓ ☔ ☕ ☖ ☗ ☘☙ ☚ ☛ ☜ ☝ ☞ ☟ ☠ ☡ ☢ ☣ ☤ ☥ ☦ ☧ ☨ ☩ ☪ ☫ ☬ ☭ ☮ ☯
-;; (use-package org-modern
-;;  :ensure t
-;;  :custom
-;;  (org-modern-table nil)
+(use-package org-modern
+  :ensure t
+  :custom
+  (org-modern-table nil)
 ;;  (org-modern-hide-stars nil)
-;;  (org-modern-checkbox
-;;   '((?X . "☑")
-;;     (?- . "☒")
-;;     (?\s . "☐")))
-;;  (org-modern-symbol "Symbola")
-;;  :hook
-;;  (org-mode . org-modern-mode)
-;;  (org-agenda-finalize . org-modern-agenda))
+  (org-modern-checkbox
+   '((?X . "☑")
+     (?- . "☒")
+     (?\s . "☐")))
+  (org-modern-symbol "Symbola")
+  :hook
+  (org-mode . org-modern-mode)
+  (org-agenda-finalize . org-modern-agenda))
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline "~/Documents/org/gtd.org" "Tasks")

@@ -18,6 +18,7 @@
 (my/register "init-org")
 (my/register "init-org-mobile")
 (my/register "init-org-roam")
+(my/register "init-org-brain")
 (my/register "init-go")
 (my/register "init-smex")
 (my/register "init-company")
