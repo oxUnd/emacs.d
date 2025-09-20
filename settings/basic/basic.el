@@ -46,8 +46,8 @@
 (use-package cnfonts
   :custom
   (cnfonts-personal-fontnames
-   '(("Cascadia Code" "CaskaydiaCove Nerd Font" "Caskaydiacove Nerd Font Mono")
-     ("方正宋刻本秀楷简体" "方正宋刻本秀楷繁体")
+   '(("Cascadia Code" "CaskaydiaMono Nerd Font" "CaskaydiaMono Nerd Font Mono")
+     ("Noto Sans" "Noto Sans")
      nil nil nil))
   :config
   (cnfonts-mode 1))

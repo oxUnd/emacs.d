@@ -14,7 +14,6 @@
 (defun my/global-settings-frame-style()
   (if (display-graphic-p)
       (progn
-	(my/fix-fonts)
 	(tool-bar-mode 0)
 	(scroll-bar-mode 0)))
   
