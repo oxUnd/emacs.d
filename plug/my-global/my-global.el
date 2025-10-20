@@ -5,8 +5,8 @@
 ;; fix fonts
 (defun my/fix-fonts()
   (interactive)
-  (set-face-attribute 'default nil :font (font-spec :family "CaskaydiaCove Nerd Font Mono" :size 16))
-  (set-fontset-font t 'han (font-spec :family "方正宋刻本秀楷简体" :size 17) nil 'prepend)
+  (set-face-attribute 'default nil :font (font-spec :family "CaskaydiaMono Nerd Font" :size 16))
+  (set-fontset-font t 'han (font-spec :family "微软雅黑" :size 17) nil 'prepend)
 ;;  (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji" :size 20))
   (set-fontset-font t 'symbol (font-spec :family "Symbola" :size 17)))
 
