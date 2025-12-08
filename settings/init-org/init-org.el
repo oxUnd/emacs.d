@@ -4,6 +4,8 @@
 (get-package 'org-modern)
 (get-package 'use-package)
 
+(require 'org-protocol)
+
 (my/load-plug "my-org-mode/my-org-mode")
 
 

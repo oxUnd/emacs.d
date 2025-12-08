@@ -1,6 +1,5 @@
 (provide 'init-org-roam)
 
-(get-package 'org-roam)
 (get-package 'org-roam-ui)
 (get-package 'use-package)
 (get-package 'deft)
@@ -10,6 +9,8 @@
 (setq org-roam-directory (file-truename "~/Documents/org/roam"))
 
 (use-package org-roam
+  :straight (:host github :repo "org-roam/org-roam"
+                   :files (:defaults "extensions/*"))
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/Documents/org/roam"))
@@ -25,6 +26,7 @@
 	 ("C-c n s" . org-roam-db-sync))
   :config
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode)
   (require 'org-roam-protocol))
 
 (use-package org-roam-ui
