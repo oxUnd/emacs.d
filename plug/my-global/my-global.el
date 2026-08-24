@@ -30,9 +30,6 @@
 (defun my/global-settings-basic()
   (interactive)
 
-  ;; gc
-  (setq gc-cons-threshold (* 100 1024 1024))
-    
   ;; Line spacing
   (setq-default line-spacing 0)
   (setq x-underline-at-descent-line t)
@@ -44,7 +41,9 @@
   (setq inhibit-startup-screen t)
   (setq inhibit-startup-echo-area-message t)
   (setq initial-scratch-message nil)
-  (setq initial-major-mode 'org-mode)
+  ;; Dashboard replaces the initial buffer; avoid loading Org just for the
+  ;; temporary scratch buffer during startup.
+  (setq initial-major-mode 'fundamental-mode)
   (setq-default indent-tabs-mode nil)
   (setq pop-up-windows nil)
   

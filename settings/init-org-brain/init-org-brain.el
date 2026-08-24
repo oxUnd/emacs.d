@@ -6,7 +6,14 @@
 
 (require 'use-package)
 
+(defun my/org-brain-enable-polymode ()
+  "Enable Polymode lazily in an Org Brain visualization buffer."
+  (require 'polymode)
+  (org-brain-polymode))
+
 (use-package org-brain :ensure t
+  :defer t
+  :hook (org-brain-visualize-mode . my/org-brain-enable-polymode)
   :init
   (setq org-brain-path "~/Documents/org/brain/")
   ;; For Evil users
@@ -24,8 +31,3 @@
   (setq org-brain-title-max-length 12)
   (setq org-brain-include-file-entries nil
         org-brain-file-entries-use-title nil))
-
-;; Allows you to edit entries directly from org-brain-visualize
-(use-package polymode
-  :config
-  (add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode))

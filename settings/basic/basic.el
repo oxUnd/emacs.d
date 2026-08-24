@@ -32,10 +32,13 @@
   (which-key-mode))
 
 ;;sr-speedbar
-(my/load-plug "sr-speedbar/sr-speedbar")
 (setq sr-speedbar-auto-refresh t)
+(autoload 'sr-speedbar-toggle
+  (expand-file-name "sr-speedbar/sr-speedbar" my-plug-directory)
+  nil t)
 (global-set-key (kbd "C-.") 'sr-speedbar-toggle)
-(speedbar-add-supported-extension ".go")
+(with-eval-after-load 'speedbar
+  (speedbar-add-supported-extension ".go"))
 
 ;; Enable vertico
 (use-package vertico

@@ -1,5 +1,6 @@
 (provide 'init-org-roam)
 
+(get-package 'org-roam)
 (get-package 'org-roam-ui)
 (get-package 'use-package)
 (get-package 'deft)
@@ -9,8 +10,6 @@
 (setq org-roam-directory (file-truename "~/Documents/org/roam"))
 
 (use-package org-roam
-  :straight (:host github :repo "org-roam/org-roam"
-                   :files (:defaults "extensions/*"))
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/Documents/org/roam"))

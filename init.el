@@ -1,18 +1,28 @@
 (require 'package)
-(setq package-archives '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(setq package-archives '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 
-(defun setenv-from-zshrc ()
-  (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
-    (setenv "PATH" path)
-    (setq exec-path
-          (append
-           (split-string-and-unquote path ":")
-           exec-path))))
+(defun my/setup-exec-path ()
+  "Set `exec-path' without loading the interactive zsh configuration."
+  (let* ((login-path
+          (car (process-lines "/bin/zsh" "-lc" "printf '%s\n' \"$PATH\"")))
+         (extra-paths
+          (mapcar #'expand-file-name
+                  '("~/.rustup/toolchains/stable-aarch64-apple-darwin/bin"
+                    "~/go/bin"
+                    "~/.lmstudio/bin"
+                    "/opt/homebrew/opt/node@24/bin")))
+         (paths
+          (delete-dups
+           (append (seq-filter #'file-directory-p extra-paths)
+                   (split-string login-path path-separator t)
+                   exec-path))))
+    (setq exec-path paths)
+    (setenv "PATH" (mapconcat #'identity paths path-separator))))
 
-(setenv-from-zshrc)
+(my/setup-exec-path)
 
 ;; http://ergoemacs.org/emacs/emacs_byte_compile.html
 (defun byte-compile-current-buffer ()
@@ -23,8 +33,8 @@
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
 
 (defun load-with-byte-compile (file)
-  (unless (file-exists-p (file-name-with-extension file ".elc"))
-    (byte-compile-file (file-name-with-extension file ".el")))
+  ;; Loading must never compile synchronously.  `load-prefer-newer' in
+  ;; early-init.el makes Emacs choose newer source over stale byte-code.
   (load file))
 
 ;; settings load

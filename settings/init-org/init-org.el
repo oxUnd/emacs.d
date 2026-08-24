@@ -16,6 +16,7 @@
 
 (use-package org
   :ensure t
+  :defer t
   :custom
   (org-ditaa-jar-path "~/.emacs.d/contrib/org/jditaa.jar")
   :hook

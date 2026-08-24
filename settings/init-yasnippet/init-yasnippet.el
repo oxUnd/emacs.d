@@ -8,8 +8,7 @@
 (use-package yasnippet
   :hook
   (prog-mode . yas-minor-mode-on)
-  (text-mode . yas-minor-mode-on)
-  :config
-  (yas-global-mode 1))
+  (text-mode . yas-minor-mode-on))
 
-(use-package yasnippet-snippets)
+(use-package yasnippet-snippets
+  :after yasnippet)

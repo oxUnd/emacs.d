@@ -6,6 +6,7 @@
 
 (use-package projectile
   :ensure t
+  :defer 1
   :bind (
          :map projectile-mode-map
               ("C-c p" . 'projectile-command-map))
